@@ -7,8 +7,7 @@ class Header extends Component {
         <div className="row">
           <div className="col-md-3 offset-md-3" >
             <div className="page-header">
-              <h2>Contacts List <span className="badge"> {this.props.noContacts}</span>
-             </h2>
+              <h2>My Private Contact List <span className="badge"> {this.props.noContacts}</span></h2>
             </div>
           </div>
         </div>

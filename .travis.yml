@@ -10,3 +10,10 @@ notifications:
         on_failure: always       # default: always
 script:
 - npm run build
+deploy:
+   provider: surge
+   skip_cleanup: true
+   domain: your-domain.surge.sh
+   project: ./build/
+   on:
+       branch: master
