@@ -13,7 +13,7 @@ script:
 deploy:
    provider: surge
    skip_cleanup: true
-   domain: your-domain.surge.sh
+   domain: srk-mycontacts.surge.sh
    project: ./build/
    on:
        branch: master
