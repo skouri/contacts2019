@@ -1,19 +1,26 @@
 dist: trusty
 language: node_js
 node_js:
-- stable
+- "stable"
 notifications:
     email:
         recipients:
         - skouri@yahoo.com      # change to your own address
         on_success: never        # default: change
-        on_failure: always       # default: always
-script:
+        on_failure: always  
+cache:
+  directories:
+  - node_modules
+before_script:
+- npm install -g httpserver
 - npm run build
+- cd build && httpserver -p 8080 &
+script:
+- npx cypress run
 deploy:
-   provider: surge
-   skip_cleanup: true
-   domain: srk-mycontacts.surge.sh
-   project: ./build/
-   on:
-       branch: master
+  provider: surge
+  skip_cleanup: true
+  domain: srk-mycontacts.surge.sh
+  project: ./build
+  on:
+    branch: cypress-oldUI
