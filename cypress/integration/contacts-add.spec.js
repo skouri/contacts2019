@@ -11,6 +11,6 @@ describe("Contact Add", () => {
       cy.get("button")
         .contains("Add Contact")
         .click();
-      cy.get("span.badge").contains("10");
+      cy.get("span.badge").contains("6");
     });
   });
