@@ -2,5 +2,11 @@ dist: trusty
 language: node_js
 node_js:
 - stable
+notifications:
+    email:
+        recipients:
+        - skouri@yahoo.com      # change to your own address
+        on_success: never        # default: change
+        on_failure: always       # default: always
 script:
 - npm run build
